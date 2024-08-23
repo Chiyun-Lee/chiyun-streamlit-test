@@ -1,15 +1,15 @@
 import streamlit as st
 
-st.button("hello")
+from streamlit_gtag import st_gtag
 
-st.html("""
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4XZZ9XXZ21"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-4XZZ9XXZ21');
-</script>
-""")
+if st.button("hello"):
+    st_gtag(
+        key="gtag_send_event_a",
+        id="G-4XZZ9XXZ21",
+        event_name="app_main_page",
+        params={
+            "event_category": "test_category_a",
+            "event_label": "test_label_a",
+            "value": 97,
+        },
+    )
