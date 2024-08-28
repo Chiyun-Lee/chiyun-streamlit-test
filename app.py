@@ -11,3 +11,9 @@ st_gtag(
 
 if st.button("hello"):
     st.toast("hi")
+    
+    st_gtag(
+        key="gtag_send_event_b",
+        id="G-HXSDMRLF54",
+        event_name="app_main_page_b"
+    )
